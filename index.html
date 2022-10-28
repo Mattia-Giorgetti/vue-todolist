@@ -21,12 +21,14 @@
                 <h1 class="fw-bold me-3">ToDo List</h1>
                 <span class="fs-2 text-white"><i class="fa-solid fa-check-double"></i></span>
             </div>
-            <span class="plus_add" @click="toggleInput"><i class="fa-solid fa-plus"></i></span>
-            <div class="input_field" v-show="inputReveal">
-                <input type="text" placeholder="Inserisci nuovo Task" v-model="new_task" @keyup.enter="addTask()">
-                <button class="my_btn" @click="addTask()">Add Task</button>
-                <div v-if="hasError" class='text-white bg-danger mt-3 w-75 p-2 rounded-3'>Non puoi lasciare il campo vuoto!</div>
-            </div>
+            <span class="plus_add"><i @click="toggleInput" class="fa-solid fa-plus"></i></span>
+            <Transition name="bounce">
+                <div class="input_field" v-show="inputReveal">
+                    <input type="text" placeholder="Inserisci nuovo Task" v-model="new_task" @keyup.enter="addTask()">
+                    <button class="my_btn" @click="addTask()">Add Task</button>
+                    <div v-if="hasError" class='text-white bg-danger mt-3 w-75 p-2 rounded-3'>Non puoi lasciare il campo vuoto!</div>
+                </div>
+            </Transition>
             <div class="list_container mt-4 rounded-3 p-4 ps-0">
                 <ul v-if="myList.length > 0">
                     <li :class="liItemClass" v-for="(item, index) in myList" :key="index">
@@ -36,6 +38,7 @@
                     </li>
                 </ul>
                 <div v-else class="p-3 text-center">Nessun Task </div>
+
 
 
 
