@@ -9,6 +9,7 @@ body {
 .completed_task {
     text-decoration: line-through;
     font-style: italic;
+    color: gray;
 }
 .my_btn {
     background-color: #19FC45;
@@ -28,7 +29,6 @@ body {
     color: #19FC45;
     margin-right: 1rem;
 }
-.completed_txt {
-    color: gray;
-    font-size: 0.8rem;
+.bg_gray {
+    background-color: lightgray;
 }

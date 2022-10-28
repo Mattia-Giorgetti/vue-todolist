@@ -18,7 +18,7 @@ createApp({
                     done: false
                 }
             ],
-            newItem: {},
+            backGroundClass: 'bg_gray',
             liItemClass: 'd-flex justify-content-between align-items-center border-bottom p-1',
 
         }
@@ -26,7 +26,7 @@ createApp({
     methods: {
         addTask() {
             if(this.new_task.length > 0){
-                this.myList.unshift({text:this.new_task, done:false })
+                this.myList.unshift({text:this.new_task, done:false})
                 this.hasError = false
                 this.new_task = ''
             } else {
@@ -36,8 +36,15 @@ createApp({
         removeTask(index) {
             this.myList.splice(index, 1);
         },
+        selfRemove() {
+            let complete = setInterval(() => {
+                this.removeTask();
+                clearInterval(complete);
+            }, 500);
+        },
         completeTask(index){
             this.myList[index].done = true
+            this.selfRemove()
         }
         
     },
