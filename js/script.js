@@ -18,17 +18,17 @@ createApp({
                     done: false
                 }
             ],
-            backGroundClass: 'bg_gray',
+            inputReveal: false, 
             liItemClass: 'd-flex justify-content-between align-items-center border-bottom p-1',
-
         }
     },
     methods: {
         addTask() {
             if(this.new_task.length > 0){
-                this.myList.unshift({text:this.new_task, done:false})
-                this.hasError = false
-                this.new_task = ''
+                this.myList.unshift({text:this.new_task, done:false});
+                this.hasError = false;
+                this.new_task = '';
+                this.inputReveal = false;
             } else {
                 this.hasError = true;
             }
@@ -40,13 +40,15 @@ createApp({
             let complete = setInterval(() => {
                 this.removeTask();
                 clearInterval(complete);
-            }, 500);
+            }, 700);
         },
-        completeTask(index){
-            this.myList[index].done = true
-            this.selfRemove()
+        completeTask(index) {
+            this.myList[index].done = true;
+            this.selfRemove();
+        },
+        toggleInput() {
+            this.inputReveal = this.inputReveal  == false ? this.inputReveal  = true : this.inputReveal  = false;
         }
-        
     },
 }).mount('#app');
 

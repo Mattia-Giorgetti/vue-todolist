@@ -6,6 +6,9 @@ body {
     background-color: white;
     width: 60%;
 }
+h1 {
+    font-size: 50px;
+}
 .completed_task {
     text-decoration: line-through;
     font-style: italic;
@@ -26,9 +29,18 @@ body {
 .comple_task_btn {
     font-size: 1.5rem;
     cursor: pointer;
-    color: #19FC45;
+    color: #17c73a;
     margin-right: 1rem;
 }
-.bg_gray {
-    background-color: lightgray;
+.plus_add i {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #19FC45;
+    border-radius: 50%;
+    margin-bottom: 2rem;
+    cursor: pointer;
 }
