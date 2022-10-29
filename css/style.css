@@ -1,10 +1,10 @@
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: #5d01fcbc;
+    background-color: #5504e1bc;
 }
 .list_container {
     background-color: white;
-    width: 60%;
+    width: 75%;
 }
 h1 {
     font-size: 50px;
@@ -13,6 +13,19 @@ h1 {
     text-decoration: line-through;
     font-style: italic;
     color: gray;
+}
+.flag_task_btn{
+  color: dodgerblue;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+.flag_task_btn_active {
+  color: red;
+}
+.flagged_txt {
+  color: red;
+  font-weight: bolder;
 }
 .my_btn {
     background-color: #19FC45;

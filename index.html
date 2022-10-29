@@ -32,18 +32,18 @@
             <div class="list_container mt-4 rounded-3 p-4 ps-0">
                 <ul v-if="myList.length > 0">
                     <li :class="liItemClass" v-for="(item, index) in myList" :key="index">
-                        <span :class="{'completed_task' : item.done}"> {{item.text}}</span>
-                        <span @click="completeTask(index)" class="ms-auto comple_task_btn"><i class="fa-solid fa-circle-check"></i></span>
-                        <span @click.stop="removeTask(index)" class="remove_task_btn"><i class="fa-solid fa-circle-xmark"></i></span>
+                        <span :class="{'completed_task' : item.done, 'flagged_txt' : item.flag}"> {{item.text}}</span>
+                        <div>
+                            <span @click="flaggedTask(index)" :class="{'flag_task_btn_active' : this.myList[index].flag}" class="flag_task_btn"><i class="fa-regular fa-flag"></i></span>
+                            <span @click="completeTask(index)" class="ms-auto comple_task_btn"><i class="fa-solid fa-circle-check"></i></span>
+                            <span @click.stop="removeTask(index)" class="remove_task_btn"><i class="fa-solid fa-circle-xmark"></i></span>
+                        </div>
                     </li>
                 </ul>
                 <div v-else class="p-3 text-center">Nessun Task </div>
-
-
-
-
             </div>
         </div>
+        
     </div>
     
 

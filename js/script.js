@@ -7,17 +7,21 @@ createApp({
             myList: [
                 {
                     text: 'Fare bucato',
-                    done: false
+                    done: false,
+                    flag: false
                 },
                 {
                     text: 'Comprare pasta',
-                    done: false
+                    done: false,
+                    flag: false
                 },
                 {
                     text: 'Chiamare Laura',
-                    done: false
+                    done: false,
+                    flag: false
                 }
             ],
+        
             inputReveal: false, 
             liItemClass: 'd-flex justify-content-between align-items-center border-bottom p-1',
         }
@@ -48,7 +52,12 @@ createApp({
         },
         toggleInput() {
             this.inputReveal = this.inputReveal  == false ? this.inputReveal  = true : this.inputReveal  = false;
+        },
+        flaggedTask(index) {
+            this.myList[index].flag = this.myList[index].flag == false ? this.myList[index].flag = true : this.myList[index].flag = false;
         }
+
     },
 }).mount('#app');
+
 
