@@ -62,6 +62,8 @@ h1 {
 .plus_add i:hover {
     transform: scale(1.2);
 }
+
+/* ANIMAZIONE PER INPUT  */
 .bounce-enter-active {
     animation: bounce-in 0.5s;
   }
@@ -79,4 +81,15 @@ h1 {
       transform: scale(1);
     }
   }
+
+  /* TRANSIZIONE MESSAGGIO ERRORE */
+.slide-fade-enter-active {
+  transition: all 0.3s ease-out;
+}
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateX(20px);
+  opacity: 0;
+}
+
   

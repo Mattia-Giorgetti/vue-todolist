@@ -26,7 +26,9 @@
                 <div class="input_field" v-show="inputReveal">
                     <input type="text" placeholder="Inserisci nuovo Task" v-model="new_task" @keyup.enter="addTask()">
                     <button class="my_btn" @click="addTask()">Add Task</button>
-                    <div v-if="hasError" class='text-white bg-danger mt-3 w-75 p-2 rounded-3'>Non puoi lasciare il campo vuoto!</div>
+                    <Transition name="slide-fade">
+                        <div v-if="hasError" class='text-white bg-danger mt-3 w-75 p-2 rounded-3'>Non puoi lasciare il campo vuoto!</div>
+                    </Transition>
                 </div>
             </Transition>
             <div class="list_container mt-4 rounded-3 p-4 ps-0">
