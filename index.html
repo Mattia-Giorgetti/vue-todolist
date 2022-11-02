@@ -36,8 +36,8 @@
                     <li :class="liItemClass" v-for="(item, index) in myList" :key="index">
                         <span :class="{'completed_task' : item.done, 'flagged_txt' : item.flag}"> {{item.text}}</span>
                         <div>
-                            <span @click="flaggedTask(index)" :class="{'flag_task_btn_active' : this.myList[index].flag}" class="flag_task_btn"><i class="fa-regular fa-flag"></i></span>
-                            <span @click="completeTask(index)" class="ms-auto comple_task_btn"><i class="fa-solid fa-circle-check"></i></span>
+                            <span @click.stop="flaggedTask(index)" :class="{'flag_task_btn_active' : this.myList[index].flag}" class="flag_task_btn"><i class="fa-regular fa-flag"></i></span>
+                            <span @click.stop="completeTask(index)" class="ms-auto comple_task_btn"><i class="fa-solid fa-circle-check"></i></span>
                             <span @click.stop="removeTask(index)" class="remove_task_btn"><i class="fa-solid fa-circle-xmark"></i></span>
                         </div>
                     </li>

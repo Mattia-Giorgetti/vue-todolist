@@ -40,15 +40,15 @@ createApp({
         removeTask(index) {
             this.myList.splice(index, 1);
         },
-        selfRemove() {
+        selfRemove(index) {
             let complete = setInterval(() => {
-                this.removeTask();
+                this.removeTask(index);
                 clearInterval(complete);
             }, 700);
         },
         completeTask(index) {
-            this.myList[index].done = true;
-            this.selfRemove();
+            this.myList[index].done = !this.myList[index].done ;
+            this.selfRemove(index);
         },
         toggleInput() {
             this.inputReveal = this.inputReveal  == false ? this.inputReveal  = true : this.inputReveal  = false;
